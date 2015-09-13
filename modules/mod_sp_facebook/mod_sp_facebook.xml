@@ -1,0 +1,201 @@
+<?xml version="1.0" encoding="utf-8"?>
+<extension type="module" version="2.5" client="site" method="upgrade">
+	<name>SP Facebook</name>
+	<author>JoomShaper.com</author>
+	<creationDate>May 2011</creationDate>
+	<copyright>Copyright (C) 2010 - 2013 JoomShaper.com. All rights reserved.</copyright>
+	<license>GNU/GPL V2</license>
+	<authorEmail>support@joomshaper.com</authorEmail>
+	<authorUrl>www.joomshaper.com</authorUrl>
+	<version>1.4</version>
+	<description>SP Facebook - All in one facebook module for joomla by JoomShaper.com</description>
+	
+	<languages>
+		<language tag="en-GB">language/en-GB.mod_sp_facebook.ini</language>
+	</languages>
+	
+	<files>
+		<filename module="mod_sp_facebook">mod_sp_facebook.php</filename>
+		<folder>tmpl/</folder>
+		<filename>index.html</filename>
+	</files>	
+	
+	<config>
+		<fields name="params">	
+			<fieldset name="Basic">
+				<field name="plg_type" type="list" default="likebox" label="PLUGIN_TYPE" description="PLUGIN_TYPE_DESC">
+					<option value="activity_feed">ACTIVITY_FEED</option>
+					<option value="comments">COMMENTS</option>
+					<option value="facepile">FACEPILE</option>
+					<option value="like_button">LIKE_BUTTON</option>
+					<option value="likebox">LIKE_BOX</option>
+					<option value="recommendations">RECOMMENDATIONS</option>
+					<option value="send_button">SEND_BUTTON</option>
+				</field>
+				<field name="app_id" type="text" default="" label="Application Id" description="Your facebook app id" />
+				<field name="plg_lang" type="text" default="en_US" label="LANG" description="LANG_DESC" />
+			</fieldset>
+			
+			<fieldset name="ACTIVITY_FEED">
+				<field name="actvity_domain" type="text" default="" label="DOMAIN" description="ACTIVITY_DOMAIN_DESC" />
+				<field name="actvity_width" type="text" default="300" label="WIDTH" description="WIDTH_DESC" />
+				<field name="actvity_height" type="text" default="300" label="HEIGHT" description="HEIGHT_DESC" />
+				<field name="actvity_header" type="radio" class="btn-group" default="true" label="SHOW_HEADER" description="SHOW_HEADER_DESC">
+					<option value="false">JNO</option>
+					<option value="true">JYES</option>
+				</field>
+				<field name="actvity_colorscheme" type="list" default="light" label="COLOR_SCHEME" description="COLOR_SCHEME_DESC">
+					<option value="light">LIGHT</option>
+					<option value="dark">DARK</option>
+				</field>
+
+				<field name="actvity_font" type="list" default="" label="Font" description="FONT_DESC">
+					<option value=""></option>
+					<option value="arial">arial</option>
+					<option value="lucida grande">lucida grande</option>
+					<option value="segoe ui">segoe ui</option>
+					<option value="tahoma">tahoma</option>
+					<option value="trebuchet ms">trebuchet ms</option>
+					<option value="verdana">verdana</option>
+				</field>
+				<field name="actvity_recommendations" type="radio" class="btn-group" default="false" label="SHOW_RECOMMENDATIONS" description="SHOW_RECOMMENDATIONS">
+					<option value="false">JNO</option>
+					<option value="true">JYES</option>
+				</field>	
+			</fieldset>	
+
+			<fieldset name="COMMENTS">
+				<field name="comments_url" type="text" default="" label="URLTOCOMMENTS" description="URLTOCOMMENTS_DESC" />
+				<field name="auto_url" type="radio" class="btn-group" default="0" label="AUTO_URL" description="AUTO_URL_DESC">
+					<option value="0">JNO</option>
+					<option value="1">JYES</option>
+				</field>				
+				<field name="comments_numposts" type="text" default="2" label="POSTS_NUM" description="POSTS_NUM_DESC" />
+				<field name="comments_width" type="text" default="300" label="WIDTH" description="WIDTH_DESC" />
+				<field name="comments_colorscheme" type="list" default="light" label="COLOR_SCHEME" description="COLOR_SCHEME_DESC">
+					<option value="light">LIGHT</option>
+					<option value="dark">DARK</option>
+				</field>	
+			</fieldset>	
+
+			<fieldset name="FACEPILE">
+				<field name="fp_url" type="text" default="" label="URL" description="URL_DESC" />
+				<field name="fp_width" type="text" default="300" label="WIDTH" description="WIDTH_DESC" />	
+				<field name="fp_rows" type="text" default="1" label="NUM_ROWS" description="NUM_ROWS_DESC" />	
+			</fieldset>
+
+			<fieldset name="LIKE_BOX">
+				<field name="likebox_url" type="text" default="" label="FB_URL" description="FB_URL_DESC" />
+				<field name="likebox_width" type="text" default="300" label="WIDTH" description="WIDTH_DESC" />
+				<field name="likebox_height" type="text" default="400" label="HEIGHT" description="HEIGHT_DESC" />
+				<field name="likebox_colorscheme" type="list" default="light" label="COLOR_SCHEME" description="COLOR_SCHEME_DESC">
+					<option value="light">LIGHT</option>
+					<option value="dark">DARK</option>
+				</field>
+				<field name="likebox_showfaces" type="radio" class="btn-group" default="true" label="SHOW_FACES" description="SHOW_FACES_DESC">
+					<option value="false">JNO</option>
+					<option value="true">JYES</option>
+				</field>
+				<field name="likebox_stream" type="radio" class="btn-group" default="true" label="SHOW_STREAM" description="SHOW_LIKEBOX_STREAM_DESC">
+					<option value="false">JNO</option>
+					<option value="true">JYES</option>
+				</field>
+				<field name="likebox_header" type="radio" class="btn-group" default="true" label="SHOW_HEADER" description="SHOW_LIKEBOX_HEADER_DESC">
+					<option value="false">JNO</option>
+					<option value="true">JYES</option>
+				</field>
+				<field name="likebox_show_border" type="radio" class="btn-group" default="true" label="SHOW_BORDER" description="SHOW_BORDER_DESC">
+					<option value="false">JNO</option>
+					<option value="true">JYES</option>
+				</field>
+
+			</fieldset>	
+
+			<fieldset name="LIKE_BUTTON">
+				<field name="likebtn_url" type="text" default="" label="URLTOLIKE" description="URLTOLIKE_DESC" />
+				<field name="likebtn_sendbtn" type="radio" class="btn-group" default="true" label="SHOW_SEND_BUTTON" description="SHOW_SEND_BUTTON_DESC">
+					<option value="false">JNO</option>
+					<option value="true">JYES</option>
+				</field>
+
+				<field name="likebtn_layout" type="list" default="standard" label="LAYOUT_STYLE" description="LAYOUT_STYLE_DESC">
+					<option value="standard">STANDARD</option>
+					<option value="button_count">BUTTON_COUNT</option>
+					<option value="box_count">BOX_COUNT</option>
+				</field>				
+				<field name="likebtn_width" type="text" default="300" label="WIDTH" description="WIDTH_DESC" />
+				<field name="likebtn_showfaces" type="radio" class="btn-group" default="true" label="SHOW_FACES" description="SHOW_FACES_DESC">
+					<option value="false">JNO</option>
+					<option value="true">JYES</option>
+				</field>				
+				<field name="likebtn_verd" type="list" default="like" label="VERB" description="VERB_DESC">
+					<option value="like">LIKE</option>
+					<option value="recommend">RECOMMEND</option>
+				</field>
+				<field name="likebtn_colorscheme" type="list" default="light" label="COLOR_SCHEME" description="COLOR_SCHEME_DESC">
+					<option value="light">LIGHT</option>
+					<option value="dark">DARK</option>
+				</field>	
+				<field name="likebtn_font" type="list" default="" label="FONT" description="FONT_DESC">
+					<option value=""></option>
+					<option value="arial">arial</option>
+					<option value="lucida grande">lucida grande</option>
+					<option value="segoe ui">segoe ui</option>
+					<option value="tahoma">tahoma</option>
+					<option value="trebuchet ms">trebuchet ms</option>
+					<option value="verdana">verdana</option>
+				</field>				
+			</fieldset>
+
+			<fieldset name="RECOMMENDATIONS">
+				<field name="rec_domain" type="text" default="" label="DOMAIN" description="DOMAIN_REC" />
+				<field name="rec_width" type="text" default="300" label="WIDTH" description="WIDTH_DESC" />
+				<field name="rec_height" type="text" default="300" label="HEIGHT" description="HEIGHT_DESC" />
+				<field name="rec_showheader" type="radio" class="btn-group" default="true" label="SHOW_HEADER" description="SHOW_HEADER_DESC">
+					<option value="false">JNO</option>
+					<option value="true">JYES</option>
+				</field>	
+				<field name="rec_colorscheme" type="list" default="light" label="COLOR_SCHEME" description="COLOR_SCHEME_DESC">
+					<option value="light">LIGHT</option>
+					<option value="dark">DARK</option>
+				</field>
+				<field name="rec_font" type="list" default="" label="FONT" description="FONT_DESC">
+					<option value=""></option>
+					<option value="arial">arial</option>
+					<option value="lucida grande">lucida grande</option>
+					<option value="segoe ui">segoe ui</option>
+					<option value="tahoma">tahoma</option>
+					<option value="trebuchet ms">trebuchet ms</option>
+					<option value="verdana">verdana</option>
+				</field>				
+	
+			</fieldset>	
+
+			<fieldset name="SEND_BUTTON">
+				<field name="send_url" type="text" default="" label="URLTOSEND" description="URLTOSEND_DESC" />
+				<field name="send_font" type="list" default="" label="FONT" description="FONT_DESC">
+					<option value=""></option>
+					<option value="arial">arial</option>
+					<option value="lucida grande">lucida grande</option>
+					<option value="segoe ui">segoe ui</option>
+					<option value="tahoma">tahoma</option>
+					<option value="trebuchet ms">trebuchet ms</option>
+					<option value="verdana">verdana</option>
+				</field>				
+				<field name="send_colorscheme" type="list" default="light" label="COLOR_SCHEME" description="COLOR_SCHEME_DESC">
+					<option value="light">LIGHT</option>
+					<option value="dark">DARK</option>
+				</field>
+			</fieldset>
+			
+			<fieldset name="advanced">
+				<field name="moduleclass_sfx" type="text" default="" label="MODSFX" description="MODSFX_DESC" />
+				<field name="cache" type="list" default="1" label="Caching" description="Select whether to cache the content of this module">
+					<option value="1">Use global</option>
+					<option value="0">No caching</option>
+				</field>
+				<field name="cache_time" type="text" default="900" label="Cache Time" description="The time before the module is recached" />
+			</fieldset>
+		</fields>
+	</config>
+</extension>

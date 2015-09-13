@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<extension version="1.7" type="plugin" group="content" method="upgrade">
+	<name>Content - Facebook Comments</name>
+	<author>Gyula Komar</author>
+	<creationDate>September 2011</creationDate>
+	<authorEmail>gkomar@freemail.hu</authorEmail>
+	<authorUrl>buildweb.eu</authorUrl>
+	<version>3.0.28</version>
+	<description>Replaces {fcomment} tag in content with Facebook Comments Module. You can use the moderation feature if you provide a Facebook Application ID and lint your URL at http://developers.facebook.com/tools/lint/. To get an App ID go to http://developers.facebook.com/ select MyApps and Set Up New App.</description>
+	<license>http://www.gnu.org/licenseses/gpl-2.0.html GNU/GPL</license>
+	<files>
+		<filename plugin="fcomment">fcomment.php</filename>
+		<filename plugin="fcomment">fcomment_sendmail.php</filename>
+	</files>
+	<config>
+		<fields name="params">
+			<fieldset name="basic">
+				<field name="width" type="text" size="20" default="500" label="Width" description=""/>
+				<field name="num_posts" type="text" size="20" default="10" label="Number of Posts" description=""/>
+				<field name="app_id" type="text" size="20" default="" label="Facebook Application ID" description=""/>
+				<field name="colorscheme" type="list" default="light" label="Color Scheme" description="">
+					<option value="light">light</option>
+					<option value="dark">dark</option>
+				</field>
+				<field name="mail_to" type="text" size="50" default="" label="E-mail on New Post" description=""/>
+				<field name="mail_subject" type="text" size="50" default="" label="E-mail Subject" description=""/>
+				<field name="og_url" type="radio" default="1" label="Add FB URL Property (og:url)" description="">
+					<option value="0">Do not Add</option>
+					<option value="1">Add</option>
+				</field>
+				<field name="og_type" type="text" size="20" default="article" label="FB Property (og:type)" description="http://developers.facebook.com/docs/opengraph/#types"/>
+				<field name="og_image" type="text" size="50" default="" label="FB Property (og:image)" description="Needs full URL"/>
+				<field name="mobile" type="list" default="0" label="User-agent" description="">
+					<option value="0">Auto-detect</option>
+					<option value="1">Desktop</option>
+					<option value="2">Mobile</option>
+				</field>
+			</fieldset>
+		</fields>
+	</config>
+</extension>
